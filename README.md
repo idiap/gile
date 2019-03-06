@@ -235,7 +235,12 @@ Pretrained models
 ---------------
 Apart from the code, we also provide under pretrained/ folder the configurations of the best-performing model that uses GILE output layer from the experiments in [<a href="https://arxiv.org/pdf/1806.06219.pdf">1</a>] (Table 1):
 
-1. **gile-wan/**: Model with DENSE encoders and GILE output layer on general categories (Table 1).
+1. **gile-wan/**: Model with DENSE encoders and GILE output layer on general categories (Table 1). Due to its big size this pretrained model is hosted externally and can be obtained as follows: 
+```
+cd hdf5; wget https://raw.githubusercontent.com/circulosmeos/gdown.pl/master/gdown.pl ; chmod +x gdown.pl;
+./gdown.pl https://drive.google.com/open?id=1Xq8-9KBLEBRoTzOMAIqqzXueq0_ciLML bioasq-pretrained.zip
+unzip bioasq-pretrained.zip  
+```
 
 ### Testing
 The command below evaluates the WAN model with DENSE encoders and GILE output layer on the seen labels during. The resulting average F1-score should match the one in the corresponding column of Table 1 in [<a href="https://arxiv.org/pdf/1806.06219.pdf">1</a>].
