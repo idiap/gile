@@ -520,7 +520,7 @@ class MHAN:
 			x_vecs, y_vecs = load_vectors(x, y, idxs, self.args['wpad'], num_labels, self)
 			if self.args['la']: # Zero-shot models
 				if self.args['train']:
-                    # Predictions for all the labels are build subsequently due to
+                    			# Predictions for all the labels are build subsequently due to
 					# the predefined vocabulary size which is required by sampling.
 					ll = int(self.args["sampling"]*num_labels)
 					done, pred, pi = False, None, 0
@@ -545,7 +545,7 @@ class MHAN:
 				else:
 					pred = self.model.predict([np.array(x_vecs), label_vecs], batch_size=self.args['bs'])
 			else:
-                # Non-zero-shot models
+                		# Non-zero-shot models
 				pred = self.model.predict(np.array(x_vecs), batch_size=self.args['bs'])
 			real = np.array(y_vecs); pred = np.array(pred)
 			rls.append(rankloss(real[:,eval_ids], pred[:,eval_ids]))
