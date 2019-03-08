@@ -489,10 +489,7 @@ class MHAN:
 			if source is None and not self.single_language:
 				if self.args['la']:
 					inputs_all = self.get_inputs([np.array(x_vecs) for i in range(L)], [label_vecs[i] for i in range(L)])
-					try:
-						pred = self.model.predict(inputs_all)[cur_lang]
-					except:
-						import pdb;pdb.set_trace()
+					pred = self.model.predict(inputs_all)[cur_lang]
 				else:
 					pred = self.model.predict([np.array(x_vecs) for i in range(L)])[cur_lang]
 			else:
