@@ -83,8 +83,8 @@ To train a model we have to specify the --train argument in the run.py file. For
 For example, to train a mononolingual HAN with DENSE encoders and GILE output layer (GILE-HAN) on general German categories we execute the following command:
 ```
 python run.py --train --languages german --wordemb_path word_vectors/ --data_path=data/dw_general \
-  --path exp/bi-gen/mono/gile-han-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 300 --bs 16 \
-  --enc attdense --act relu --la
+  --path exp/bi-gen/mono/gile-han-att --wdim 40 --swpad 30 --spad 30 --sdim 100 --ddim 100 --ep 300 \ 
+  --bs 16 --enc attdense --act relu --la
 ```
 
 ### Multilingual
