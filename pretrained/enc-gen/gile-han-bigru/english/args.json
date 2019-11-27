@@ -7,7 +7,7 @@
     "spad": 30, 
     "onlyinput": false, 
     "ep": 300, 
-    "ladim": null, 
+    "ladim": 233, 
     "enc": "attbigru", 
     "la": true, 
     "laact": "relu", 
