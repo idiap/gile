@@ -248,12 +248,11 @@ class MHAN:
 				W_doc = joint['classdoc_emb'](document)
 				V_doc = joint['classlab_emb'](label_vecs)
 			doclab_rep = RepeatVector(L)
-			classjoint_sig =  Dense(1, input_dim=(V_doc._keras_shape[1]), activation='sigmoid')
-			doclab_sig = TimeDistributed(classjoint_sig, )
+			classjoint_sig = Dense(1, activation='sigmoid')
 			doclab_sig_reshape = Reshape((L,))
 			W_rep = doclab_rep(W_doc)
 			matrix = merge([W_rep, V_doc], "mul")
-			decision = doclab_sig(matrix)
+			decision = classjoint_sig(matrix)
 			decision = doclab_sig_reshape(decision)
 			return words, label_vecs, decision
 		else:
